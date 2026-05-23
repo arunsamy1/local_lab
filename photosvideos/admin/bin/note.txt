@@ -1,0 +1,24 @@
+cwebp isn't installed but ImageMagick's convert is available. I'll write a bash script using that.
+
+Excellent — 84% size reduction across all 6 files. The WebP files are in webp/.
+
+Script: convert_to_webp.sh
+
+Usage:
+
+
+# Default: quality=85, current dir, output → ./webp/
+./convert_to_webp.sh
+
+# Custom quality (1-100)
+./convert_to_webp.sh 90
+
+# Custom input and output dirs
+./convert_to_webp.sh 85 /path/to/images /path/to/output/dir
+
+
+Quality 85 is the standard web sweet spot — visually near-identical to the original but much smaller. If you want even smaller files, try ./convert_to_webp.sh 75; for archival quality, use 90
+
+
+sudo apt install webp ffmpeg
+
